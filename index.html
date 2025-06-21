@@ -6,7 +6,6 @@
     <title>GUNA - Autoridad de Registro Empresarial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 </head>
 <body>
     <header>
@@ -24,15 +23,17 @@
         </div>
     </section>
 
-    <!-- Navigation Buttons -->
-    <nav class="menu-links">
-        <button onclick="openPopup('about.html')">Sobre Nós</button>
-        <button onclick="openPopup('laws.html')">Leis</button>
-        <button onclick="openRegisterPopup()">Registrar</button>
-        <button onclick="openEntitiesPopup()">Entidades</button>
-        <button onclick="openPopup('agents.html')">Agentes</button>
-        <button onclick="openPopup('culture.html')">Cultura</button>
-        <button onclick="openPopup('contact.html')">Contato</button>
+    <!-- Menu de Navegação -->
+    <nav class="main-menu">
+        <ul>
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="laws.html">Leis</a></li>
+            <li><a href="register.html">Registrar Empresa</a></li>
+            <li><a href="entities.html">Entidades</a></li>
+            <li><a href="agents.html">Agentes</a></li>
+            <li><a href="culture.html">Cultura</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
     </nav>
 
     <section class="highlights">
@@ -71,120 +72,5 @@
             <img src="assets/images/svgemail.svg" alt="Contato">
         </div>
     </footer>
-
-    <!-- Main Popup Container -->
-    <div id="popup-container" class="popup-hidden">
-        <div class="popup-content">
-            <button onclick="closePopup()">✖</button>
-            <iframe id="popup-frame" src=""></iframe>
-        </div>
-    </div>
-
-    <!-- Register Popup Form -->
-    <div id="register-popup" class="popup-hidden">
-        <div class="popup-content">
-            <button onclick="closeRegisterPopup()">✖</button>
-            <h2>Registro de Empresa</h2>
-            <form id="register-form" onsubmit="submitRegisterForm(event)">
-                <div class="form-group">
-                    <label for="company-name">Nome da Empresa:</label>
-                    <input type="text" id="company-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="registration-number">Número de Registro:</label>
-                    <input type="text" id="registration-number" required>
-                </div>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Entities List Popup -->
-    <div id="entities-popup" class="popup-hidden">
-        <div class="popup-content">
-            <button onclick="closeEntitiesPopup()">✖</button>
-            <h2>Entidades Registradas</h2>
-            <div class="search-box">
-                <input type="text" id="entity-search" placeholder="Buscar entidades...">
-                <button onclick="searchEntities()">Buscar</button>
-            </div>
-            <div class="entities-list">
-                <!-- Sample entities - these would be dynamically loaded in a real implementation -->
-                <div class="entity-item" onclick="openEntityPage('ent1')">
-                    <h3>Artesanías Guna S.A.</h3>
-                    <p>ID: GNA-2025-001</p>
-                    <p>Status: Ativa</p>
-                </div>
-                <div class="entity-item" onclick="openEntityPage('ent2')">
-                    <h3>Pesca Tradicional Yala</h3>
-                    <p>ID: GNA-2025-002</p>
-                    <p>Status: Ativa</p>
-                </div>
-                <div class="entity-item" onclick="openEntityPage('ent3')">
-                    <h3>Turismo Comunitario Dummad</h3>
-                    <p>ID: GNA-2025-003</p>
-                    <p>Status: Pendente</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Main popup functions
-        function openPopup(page) {
-            document.getElementById('popup-frame').src = page;
-            document.getElementById('popup-container').classList.remove('popup-hidden');
-        }
-
-        function closePopup() {
-            document.getElementById('popup-container').classList.add('popup-hidden');
-            document.getElementById('popup-frame').src = '';
-        }
-
-        // Register popup functions
-        function openRegisterPopup() {
-            document.getElementById('register-popup').classList.remove('popup-hidden');
-        }
-
-        function closeRegisterPopup() {
-            document.getElementById('register-popup').classList.add('popup-hidden');
-        }
-
-        function submitRegisterForm(event) {
-            event.preventDefault();
-            const companyName = document.getElementById('company-name').value;
-            const regNumber = document.getElementById('registration-number').value;
-            
-            // In a real implementation, you would save this data and redirect
-            window.location.href = `register.html?name=${encodeURIComponent(companyName)}&reg=${encodeURIComponent(regNumber)}`;
-        }
-
-        // Entities popup functions
-        function openEntitiesPopup() {
-            document.getElementById('entities-popup').classList.remove('popup-hidden');
-        }
-
-        function closeEntitiesPopup() {
-            document.getElementById('entities-popup').classList.add('popup-hidden');
-        }
-
-        function searchEntities() {
-            const searchTerm = document.getElementById('entity-search').value.toLowerCase();
-            const entities = document.querySelectorAll('.entity-item');
-            
-            entities.forEach(entity => {
-                const text = entity.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    entity.style.display = 'block';
-                } else {
-                    entity.style.display = 'none';
-                }
-            });
-        }
-
-        function openEntityPage(entityId) {
-            window.location.href = `entities.html?id=${entityId}`;
-        }
-    </script>
 </body>
 </html>
