@@ -1,354 +1,188 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUNA - Autoridad de Registro Empresarial</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <img src="assets/images/logo.png" alt="Logo GUNA" class="logo">
+            <h1>Autoridad Indígena de Registro Empresarial</h1>
+        </div>
+    </header>
 
-body {
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-}
+    <section class="hero">
+        <img src="assets/images/bannerguna.png" alt="Banner Principal Guna">
+        <div class="hero-text">
+            <h2>Conectando Tradição e Futuro</h2>
+            <p>Registro legal, reconhecimento e fortalecimento das empresas na Comarca Guna de Magardí.</p>
+        </div>
+    </section>
 
-/* Header styles */
-header {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-}
+    <!-- Navigation Buttons -->
+    <nav class="menu-links">
+        <button onclick="openPopup('about.html')">Sobre Nós</button>
+        <button onclick="openPopup('laws.html')">Leis</button>
+        <button onclick="openRegisterPopup()">Registrar</button>
+        <button onclick="openEntitiesPopup()">Entidades</button>
+        <button onclick="openPopup('agents.html')">Agentes</button>
+        <button onclick="openPopup('culture.html')">Cultura</button>
+        <button onclick="openPopup('contact.html')">Contato</button>
+    </nav>
 
-.top-bar {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
+    <section class="highlights">
+        <div class="highlight">
+            <img src="assets/images/icon_register.svg" alt="Registro de Empresas">
+            <h3>Registro</h3>
+            <p>Legalize sua atividade na autoridade Guna. Simples, rápido e autônomo.</p>
+        </div>
+        <div class="highlight">
+            <img src="assets/images/balance_scale.svg" alt="Leis e Normas">
+            <h3>Leis</h3>
+            <p>Acesse normas, regulamentos e estrutura legal aplicada à Comarca Guna.</p>
+        </div>
+        <div class="highlight">
+            <img src="assets/images/PersonBadgePlus.svg" alt="Agentes Autorizados">
+            <h3>Agentes</h3>
+            <p>Profissionais e consultores reconhecidos para acompanhar seu processo.</p>
+        </div>
+    </section>
 
-.logo {
-    height: 60px;
-    margin-right: 1.5rem;
-}
+    <section class="gallery">
+        <h2>Cultura Viva</h2>
+        <div class="gallery-grid">
+            <img src="assets/images/galeria1.jpg" alt="Mulher Guna com Mola">
+            <img src="assets/images/galeria2.jpg" alt="Tecelagem tradicional">
+            <img src="assets/images/galeria3.jpg" alt="Crianças Guna sorrindo">
+            <img src="assets/images/galeria4.jpg" alt="Cerimônia com achiote">
+            <img src="assets/images/galeria5.jpg" alt="Barco Cayuco no rio">
+            <img src="assets/images/galeria6.jpg" alt="Vista da Comarca Guna">
+        </div>
+    </section>
 
-h1 {
-    color: #2c3e50;
-    font-size: 1.8rem;
-    font-weight: 600;
-}
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 GUNA – Comarca de Magardí. Todos os direitos reservados.</p>
+            <img src="assets/images/svgemail.svg" alt="Contato">
+        </div>
+    </footer>
 
-/* Hero section */
-.hero {
-    position: relative;
-    max-height: 500px;
-    overflow: hidden;
-}
+    <!-- Main Popup Container -->
+    <div id="popup-container" class="popup-hidden">
+        <div class="popup-content">
+            <button onclick="closePopup()">✖</button>
+            <iframe id="popup-frame" src=""></iframe>
+        </div>
+    </div>
 
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+    <!-- Register Popup Form -->
+    <div id="register-popup" class="popup-hidden">
+        <div class="popup-content">
+            <button onclick="closeRegisterPopup()">✖</button>
+            <h2>Registro de Empresa</h2>
+            <form id="register-form" onsubmit="submitRegisterForm(event)">
+                <div class="form-group">
+                    <label for="company-name">Nome da Empresa:</label>
+                    <input type="text" id="company-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="registration-number">Número de Registro:</label>
+                    <input type="text" id="registration-number" required>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
 
-.hero-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
+    <!-- Entities List Popup -->
+    <div id="entities-popup" class="popup-hidden">
+        <div class="popup-content">
+            <button onclick="closeEntitiesPopup()">✖</button>
+            <h2>Entidades Registradas</h2>
+            <div class="search-box">
+                <input type="text" id="entity-search" placeholder="Buscar entidades...">
+                <button onclick="searchEntities()">Buscar</button>
+            </div>
+            <div class="entities-list">
+                <!-- Sample entities - these would be dynamically loaded in a real implementation -->
+                <div class="entity-item" onclick="openEntityPage('ent1')">
+                    <h3>Artesanías Guna S.A.</h3>
+                    <p>ID: GNA-2025-001</p>
+                    <p>Status: Ativa</p>
+                </div>
+                <div class="entity-item" onclick="openEntityPage('ent2')">
+                    <h3>Pesca Tradicional Yala</h3>
+                    <p>ID: GNA-2025-002</p>
+                    <p>Status: Ativa</p>
+                </div>
+                <div class="entity-item" onclick="openEntityPage('ent3')">
+                    <h3>Turismo Comunitario Dummad</h3>
+                    <p>ID: GNA-2025-003</p>
+                    <p>Status: Pendente</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.hero-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
+    <script>
+        // Main popup functions
+        function openPopup(page) {
+            document.getElementById('popup-frame').src = page;
+            document.getElementById('popup-container').classList.remove('popup-hidden');
+        }
 
-.hero-text p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
+        function closePopup() {
+            document.getElementById('popup-container').classList.add('popup-hidden');
+            document.getElementById('popup-frame').src = '';
+        }
 
-/* Navigation buttons */
-.menu-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 2rem auto;
-    gap: 1rem;
-    padding: 0 2rem;
-}
+        // Register popup functions
+        function openRegisterPopup() {
+            document.getElementById('register-popup').classList.remove('popup-hidden');
+        }
 
-.menu-links button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 150px;
-}
+        function closeRegisterPopup() {
+            document.getElementById('register-popup').classList.add('popup-hidden');
+        }
 
-.menu-links button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-}
+        function submitRegisterForm(event) {
+            event.preventDefault();
+            const companyName = document.getElementById('company-name').value;
+            const regNumber = document.getElementById('registration-number').value;
+            
+            // In a real implementation, you would save this data and redirect
+            window.location.href = `register.html?name=${encodeURIComponent(companyName)}&reg=${encodeURIComponent(regNumber)}`;
+        }
 
-/* Highlights section */
-.highlights {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-    flex-wrap: wrap;
-}
+        // Entities popup functions
+        function openEntitiesPopup() {
+            document.getElementById('entities-popup').classList.remove('popup-hidden');
+        }
 
-.highlight {
-    flex: 1;
-    min-width: 250px;
-    margin: 1rem;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
+        function closeEntitiesPopup() {
+            document.getElementById('entities-popup').classList.add('popup-hidden');
+        }
 
-.highlight img {
-    height: 80px;
-    margin-bottom: 1.5rem;
-}
+        function searchEntities() {
+            const searchTerm = document.getElementById('entity-search').value.toLowerCase();
+            const entities = document.querySelectorAll('.entity-item');
+            
+            entities.forEach(entity => {
+                const text = entity.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    entity.style.display = 'block';
+                } else {
+                    entity.style.display = 'none';
+                }
+            });
+        }
 
-.highlight h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-/* Gallery section */
-.gallery {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 2rem;
-    text-align: center;
-}
-
-.gallery h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.03);
-}
-
-/* Footer styles */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-content img {
-    height: 30px;
-}
-
-/* Popup styles */
-.popup-hidden {
-    display: none;
-}
-
-#popup-container, #register-popup, #entities-popup {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0,0,0,0.8);
-    display: flex; justify-content: center; align-items: center;
-    z-index: 9999;
-}
-
-.popup-content {
-    background: white;
-    border-radius: 12px;
-    width: 90%;
-    height: 90%;
-    overflow: hidden;
-    position: relative;
-    padding: 2rem;
-}
-
-.popup-content iframe {
-    width: 100%;
-    height: calc(100% - 40px);
-    border: none;
-}
-
-.popup-content button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 32px; height: 32px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Register form styles */
-#register-form {
-    max-width: 500px;
-    margin: 2rem auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-#register-form button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Entities list styles */
-.entities-list {
-    margin-top: 2rem;
-    height: calc(100% - 120px);
-    overflow-y: auto;
-}
-
-.entity-item {
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.entity-item:hover {
-    background-color: #f9f9f9;
-}
-
-.search-box {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.search-box input {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.search-box button {
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    padding: 0 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .top-bar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .logo {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-text p {
-        font-size: 1rem;
-    }
-    
-    .highlights {
-        flex-direction: column;
-    }
-    
-    .menu-links {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .menu-links button {
-        width: 100%;
-    }
-    
-    .popup-content {
-        width: 95%;
-        height: 95%;
-        padding: 1rem;
-    }
-}
-
-/* Add colors inspired by Guna culture */
-header, .highlight {
-    border-top: 5px solid #e74c3c; /* Red inspired by traditional molas */
-}
-
-.hero-text {
-    background: linear-gradient(transparent, rgba(44, 62, 80, 0.8)); /* Dark blue gradient */
-}
+        function openEntityPage(entityId) {
+            window.location.href = `entities.html?id=${entityId}`;
+        }
+    </script>
+</body>
+</html>
