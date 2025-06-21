@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entidade Registrada - GUNA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .entity-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .entity-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .entity-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .certificate {
+            border: 2px dashed #e74c3c;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .certificate h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        
+        .certificate-id {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 1rem auto;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="entity-header">
+        <h1 id="entity-name">Entidade Registrada</h1>
+        <p id="entity-id">ID: Carregando...</p>
+    </div>
+    
+    <div class="entity-content">
+        <div class="entity-details">
+            <div class="detail-card">
+                <h3>Informações Básicas</h3>
+                <p><strong>Data de Registro:</strong> <span id="reg-date">15/06/2025</span></p>
+                <p><strong>Atividade Principal:</strong> <span id="main-activity">Artesanato Tradicional</span></p>
+                <p><strong>Comunidade:</strong> <span id="community">Magardí</span></p>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Responsável Legal</h3>
+                <p><strong>Nome:</strong> <span id="legal-name">Ana Candelaria</span></p>
+                <p><strong>Documento:</strong> <span id="legal-id">GNA-ID-2025-001</span></p>
+                <p><strong>Contato:</strong> <span id="legal-contact">ana@artesaniaguna.com</span></p>
+            </div>
+            
+            <div class="detail-card">
+                <h3>Status Legal</h3>
+                <p><strong>Status:</strong> <span class="status-active" id="entity-status">Ativa</span></p>
+                <p><strong>Última Atualização:</strong> <span id="last-update">10/07/2025</span></p>
+                <p><strong>Próxima Renovação:</strong> <span id="next-renewal">15/06/2026</span></p>
+            </div>
+        </div>
+        
+        <div class="certificate">
+            <span class="certificate-id">CERTIFICADO</span>
+            <h3>Autoridad Indígena de Registro Empresarial</h3>
+            <p>Certificamos que <strong id="cert-name">[Nome da Empresa]</strong> está devidamente registrada na Comarca Guna de Magardí conforme as leis e tradições de nosso povo.</p>
+            <div class="qr-code">
+                Código QR<br>de Validação
+            </div>
+            <p><strong>Válido até:</strong> <span id="valid-until">15/06/2026</span></p>
+        </div>
+        
+        <a href="index.html" class="back-button">Voltar ao Início</a>
+    </div>
+
+    <script>
+        // Get entity ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const entityId = urlParams.get('id');
+        
+        // In a real app, you would fetch this data from an API
+        const entities = {
+            'ent1': {
+                name: 'Artesanías Guna S.A.',
+                id: 'GNA-2025-001',
+                regDate: '15/06/2025',
+                activity: 'Artesanato Tradicional',
+                community: 'Magardí',
+                legalName: 'Ana Candelaria',
+                legalId: 'GNA-ID-2025-001',
+                contact: 'ana@artesaniaguna.com',
+                status: 'Ativa',
+                lastUpdate: '10/07/2025',
+                renewal: '15/06/2026',
+                validUntil: '15/06/2026'
+            },
+            'ent2': {
+                name: 'Pesca Tradicional Yala',
+                id: 'GNA-2025-002',
+                regDate: '20/06/2025',
+                activity: 'Pesca Artesanal',
+                community: 'Yala',
+                legalName: 'Carlos Inatoy',
+                legalId: 'GNA-ID-2025-002',
+                contact: 'pescayala@guna.com',
+                status: 'Ativa',
+                lastUpdate: '25/06/2025',
+                renewal: '20/06/2026',
+                validUntil: '20/06/2026'
+            },
+            'ent3': {
+                name: 'Turismo Comunitario Dummad',
+                id: 'GNA-2025-003',
+                regDate: '01/07/2025',
+                activity: 'Turismo Étnico',
+                community: 'Dummad',
+                legalName: 'María Olo',
+                legalId: 'GNA-ID-2025-003',
+                contact: 'turismo@dummad.guna',
+                status: 'Pendente',
+                lastUpdate: '01/07/2025',
+                renewal: '01/07/2026',
+                validUntil: '01/07/2026'
+            }
+        };
+        
+        // Populate data
+        if (entityId && entities[entityId]) {
+            const entity = entities[entityId];
+            document.getElementById('entity-name').textContent = entity.name;
+            document.getElementById('entity-id').textContent = `ID: ${entity.id}`;
+            document.getElementById('reg-date').textContent = entity.regDate;
+            document.getElementById('main-activity').textContent = entity.activity;
+            document.getElementById('community').textContent = entity.community;
+            document.getElementById('legal-name').textContent = entity.legalName;
+            document.getElementById('legal-id').textContent = entity.legalId;
+            document.getElementById('legal-contact').textContent = entity.contact;
+            document.getElementById('entity-status').textContent = entity.status;
+            document.getElementById('last-update').textContent = entity.lastUpdate;
+            document.getElementById('next-renewal').textContent = entity.renewal;
+            document.getElementById('cert-name').textContent = entity.name;
+            document.getElementById('valid-until').textContent = entity.validUntil;
+            
+            // Change status color
+            const statusElement = document.getElementById('entity-status');
+            if (entity.status === 'Ativa') {
+                statusElement.classList.add('status-active');
+            } else {
+                statusElement.classList.add('status-pending');
+            }
+        }
+    </script>
+</body>
+</html>
