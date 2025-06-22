@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Guna - GUNA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .popup-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .popup-page h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .culture-highlight {
+            margin: 2rem 0;
+        }
+        
+        .culture-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .culture-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .culture-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            margin: 2rem 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="popup-header">
+        <img src="assets/images/logo1.jpg" alt="Logo GUNA" class="popup-logo">
+        <h1>Autoridad Indígena de Registro Empresarial</h1>
+    </header>
+
+    <main class="popup-page">
+        <h2>Cultura Guna</h2>
+        <p>Exploramos la riqueza de la tradición Guna, su arte, música y costumbres que forman el fundamento de nuestra identidad y regulación empresarial.</p>
+        
+        <div class="culture-highlight">
+            <img src="assets/images/galeria1.jpg" alt="Molas Guna" class="culture-image">
+            <h3>Arte Textil: Las Molas</h3>
+            <p>Las molas son piezas textiles tradicionales que representan nuestra cosmovisión. Muchas empresas registradas se dedican a la producción y comercialización de este arte único.</p>
+        </div>
+        
+        <div class="culture-grid">
+            <div class="culture-item">
+                <h3>Festividades Tradicionales</h3>
+                <p>Nuestras celebraciones como el Día de la Revolución Guna (25 de febrero) son momentos importantes para la economía local.</p>
+            </div>
+            
+            <div class="culture-item">
+                <h3>Gastronomía</h3>
+                <p>Platos tradicionales como el tule masi y bebidas como el chicha fuerte son parte de nuestra identidad.</p>
+            </div>
+            
+            <div class="culture-item">
+                <h3>Medicina Tradicional</h3>
+                <p>Conocimientos ancestrales que también se han convertido en emprendimientos registrados.</p>
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ejemplo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </main>
+</body>
+</html>
