@@ -3,202 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entidade Registrada - GUNA</title>
+    <title>Entidades Registradas - GUNA</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .entity-header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
+        /* Estilos específicos para esta página */
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 0 2rem;
         }
         
-        .entity-content {
-            max-width: 1000px;
+        .logo-header {
+            height: 60px;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e74c3c;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+        }
+        
+        .search-box button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .search-box button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .entities-list {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
         
-        .entity-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .detail-card {
+        .entity-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1.5rem;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid #e74c3c;
         }
         
-        .certificate {
-            border: 2px dashed #e74c3c;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-            position: relative;
+        .entity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        .certificate h3 {
-            color: #e74c3c;
-            margin-bottom: 1rem;
-        }
-        
-        .certificate-id {
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: white;
-            padding: 0 10px;
+        .entity-card h3 {
             color: #2c3e50;
-            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         
-        .qr-code {
-            width: 150px;
-            height: 150px;
-            margin: 1rem auto;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            color: #777;
+        .entity-card p {
+            margin-bottom: 0.3rem;
+            color: #555;
         }
         
-        .back-button {
+        .entity-id {
             display: inline-block;
-            margin-top: 2rem;
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+        
+        .status-active {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            color: #f39c12;
+            font-weight: 600;
+        }
+        
+        .view-button {
+            display: inline-block;
+            margin-top: 1rem;
             background-color: #2c3e50;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
             text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .view-button:hover {
+            background-color: #1a252f;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <div class="entity-header">
-        <h1 id="entity-name">Entidade Registrada</h1>
-        <p id="entity-id">ID: Carregando...</p>
+    <div class="search-container">
+        <img src="assets/images/logo1.jpg" alt="Logo GUNA" class="logo-header">
+        <div class="search-box">
+            <input type="text" id="entity-search" placeholder="Buscar entidades por nombre o ID..." onkeyup="searchEntities()">
+            <button onclick="searchEntities()">Buscar</button>
+        </div>
     </div>
     
-    <div class="entity-content">
-        <div class="entity-details">
-            <div class="detail-card">
-                <h3>Informações Básicas</h3>
-                <p><strong>Data de Registro:</strong> <span id="reg-date">15/06/2025</span></p>
-                <p><strong>Atividade Principal:</strong> <span id="main-activity">Artesanato Tradicional</span></p>
-                <p><strong>Comunidade:</strong> <span id="community">Magardí</span></p>
-            </div>
-            
-            <div class="detail-card">
-                <h3>Responsável Legal</h3>
-                <p><strong>Nome:</strong> <span id="legal-name">Ana Candelaria</span></p>
-                <p><strong>Documento:</strong> <span id="legal-id">GNA-ID-2025-001</span></p>
-                <p><strong>Contato:</strong> <span id="legal-contact">ana@artesaniaguna.com</span></p>
-            </div>
-            
-            <div class="detail-card">
-                <h3>Status Legal</h3>
-                <p><strong>Status:</strong> <span class="status-active" id="entity-status">Ativa</span></p>
-                <p><strong>Última Atualização:</strong> <span id="last-update">10/07/2025</span></p>
-                <p><strong>Próxima Renovação:</strong> <span id="next-renewal">15/06/2026</span></p>
-            </div>
-        </div>
-        
-        <div class="certificate">
-            <span class="certificate-id">CERTIFICADO</span>
-            <h3>Autoridad Indígena de Registro Empresarial</h3>
-            <p>Certificamos que <strong id="cert-name">[Nome da Empresa]</strong> está devidamente registrada na Comarca Guna de Magardí conforme as leis e tradições de nosso povo.</p>
-            <div class="qr-code">
-                Código QR<br>de Validação
-            </div>
-            <p><strong>Válido até:</strong> <span id="valid-until">15/06/2026</span></p>
-        </div>
-        
-        <a href="index.html" class="back-button">Voltar ao Início</a>
+    <div class="entities-list" id="entities-container">
+        <!-- Las entidades se cargarán aquí dinámicamente -->
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 GUNA – Comarca de Magardí. Todos los derechos reservados.</p>
+            <img src="assets/images/svgemail.svg" alt="Contacto">
+        </div>
+    </footer>
+
     <script>
-        // Get entity ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const entityId = urlParams.get('id');
-        
-        // In a real app, you would fetch this data from an API
-        const entities = {
-            'ent1': {
-                name: 'Artesanías Guna S.A.',
-                id: 'GNA-2025-001',
-                regDate: '15/06/2025',
-                activity: 'Artesanato Tradicional',
-                community: 'Magardí',
-                legalName: 'Ana Candelaria',
-                legalId: 'GNA-ID-2025-001',
-                contact: 'ana@artesaniaguna.com',
-                status: 'Ativa',
-                lastUpdate: '10/07/2025',
-                renewal: '15/06/2026',
-                validUntil: '15/06/2026'
+        // Datos de ejemplo de entidades registradas
+        const entities = [
+            {
+                id: "GNA-2025-001",
+                name: "Artesanías Guna S.A.",
+                type: "Artesanía Tradicional",
+                status: "Activa",
+                community: "Magardí",
+                regDate: "15/06/2025",
+                legalRep: "Ana Candelaria"
             },
-            'ent2': {
-                name: 'Pesca Tradicional Yala',
-                id: 'GNA-2025-002',
-                regDate: '20/06/2025',
-                activity: 'Pesca Artesanal',
-                community: 'Yala',
-                legalName: 'Carlos Inatoy',
-                legalId: 'GNA-ID-2025-002',
-                contact: 'pescayala@guna.com',
-                status: 'Ativa',
-                lastUpdate: '25/06/2025',
-                renewal: '20/06/2026',
-                validUntil: '20/06/2026'
+            {
+                id: "GNA-2025-002",
+                name: "Pesca Tradicional Yala",
+                type: "Pesca Artesanal",
+                status: "Activa",
+                community: "Yala",
+                regDate: "20/06/2025",
+                legalRep: "Carlos Inatoy"
             },
-            'ent3': {
-                name: 'Turismo Comunitario Dummad',
-                id: 'GNA-2025-003',
-                regDate: '01/07/2025',
-                activity: 'Turismo Étnico',
-                community: 'Dummad',
-                legalName: 'María Olo',
-                legalId: 'GNA-ID-2025-003',
-                contact: 'turismo@dummad.guna',
-                status: 'Pendente',
-                lastUpdate: '01/07/2025',
-                renewal: '01/07/2026',
-                validUntil: '01/07/2026'
+            {
+                id: "GNA-2025-003",
+                name: "Turismo Comunitario Dummad",
+                type: "Turismo Étnico",
+                status: "Pendiente",
+                community: "Dummad",
+                regDate: "01/07/2025",
+                legalRep: "María Olo"
             }
-        };
-        
-        // Populate data
-        if (entityId && entities[entityId]) {
-            const entity = entities[entityId];
-            document.getElementById('entity-name').textContent = entity.name;
-            document.getElementById('entity-id').textContent = `ID: ${entity.id}`;
-            document.getElementById('reg-date').textContent = entity.regDate;
-            document.getElementById('main-activity').textContent = entity.activity;
-            document.getElementById('community').textContent = entity.community;
-            document.getElementById('legal-name').textContent = entity.legalName;
-            document.getElementById('legal-id').textContent = entity.legalId;
-            document.getElementById('legal-contact').textContent = entity.contact;
-            document.getElementById('entity-status').textContent = entity.status;
-            document.getElementById('last-update').textContent = entity.lastUpdate;
-            document.getElementById('next-renewal').textContent = entity.renewal;
-            document.getElementById('cert-name').textContent = entity.name;
-            document.getElementById('valid-until').textContent = entity.validUntil;
+        ];
+
+        // Función para mostrar las entidades
+        function displayEntities(entitiesToShow) {
+            const container = document.getElementById('entities-container');
             
-            // Change status color
-            const statusElement = document.getElementById('entity-status');
-            if (entity.status === 'Ativa') {
-                statusElement.classList.add('status-active');
-            } else {
-                statusElement.classList.add('status-pending');
+            if (entitiesToShow.length === 0) {
+                container.innerHTML = '<div class="no-results">No se encontraron entidades que coincidan con su búsqueda</div>';
+                return;
             }
+            
+            let html = '';
+            entitiesToShow.forEach(entity => {
+                html += `
+                    <div class="entity-card">
+                        <h3>${entity.name}</h3>
+                        <p><span class="entity-id">${entity.id}</span> 
+                        <span class="status-${entity.status.toLowerCase() === 'activa' ? 'active' : 'pending'}">${entity.status}</span></p>
+                        <p><strong>Tipo:</strong> ${entity.type}</p>
+                        <p><strong>Comunidad:</strong> ${entity.community}</p>
+                        <p><strong>Fecha de registro:</strong> ${entity.regDate}</p>
+                        <p><strong>Representante legal:</strong> ${entity.legalRep}</p>
+                        <a href="entity-detail.html?id=${entity.id}" class="view-button">Ver detalles</a>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
         }
+
+        // Función para buscar entidades
+        function searchEntities() {
+            const searchTerm = document.getElementById('entity-search').value.toLowerCase();
+            
+            if (!searchTerm) {
+                displayEntities(entities);
+                return;
+            }
+            
+            const filteredEntities = entities.filter(entity => 
+                entity.name.toLowerCase().includes(searchTerm) || 
+                entity.id.toLowerCase().includes(searchTerm) ||
+                entity.type.toLowerCase().includes(searchTerm) ||
+                entity.community.toLowerCase().includes(searchTerm) ||
+                entity.legalRep.toLowerCase().includes(searchTerm)
+            );
+            
+            displayEntities(filteredEntities);
+        }
+
+        // Mostrar todas las entidades al cargar la página
+        window.onload = function() {
+            displayEntities(entities);
+        };
     </script>
 </body>
 </html>
