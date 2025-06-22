@@ -382,3 +382,347 @@ footer {
         margin-top: 10px;
     }
 }
+/* ============================================= */
+/* ESTILOS PARA PÁGINAS POPUP (SOBRE, LEYES, ETC) */
+/* ============================================= */
+
+.popup-header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-logo {
+    height: 70px;
+    margin-bottom: 1rem;
+}
+
+.popup-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+}
+
+.popup-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #333;
+}
+
+.popup-page h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e74c3c;
+    font-size: 1.8rem;
+}
+
+.popup-page p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Estilos específicos para cada página popup */
+
+/* SOBRE.HTML */
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.mission-vision div {
+    background: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 10px;
+    border-left: 4px solid #e74c3c;
+    transition: transform 0.3s;
+}
+
+.mission-vision div:hover {
+    transform: translateY(-5px);
+}
+
+.mission-vision h3 {
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+/* LEYES.HTML */
+.law-list {
+    margin: 2.5rem 0;
+}
+
+.law-item {
+    background: white;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #2c3e50;
+    transition: transform 0.3s;
+}
+
+.law-item:hover {
+    transform: translateY(-5px);
+}
+
+.law-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* AGENTES.HTML */
+.agent-list {
+    margin: 2.5rem 0;
+}
+
+.agent-card {
+    background: white;
+    padding: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.agent-card:hover {
+    transform: translateY(-5px);
+}
+
+.agent-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    object-fit: cover;
+    border: 3px solid #e74c3c;
+}
+
+.agent-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.agent-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.specialty {
+    display: inline-block;
+    background: #2c3e50;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* CULTURA.HTML */
+.culture-highlight {
+    margin: 2.5rem 0;
+}
+
+.culture-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.culture-image:hover {
+    transform: scale(1.02);
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.8rem;
+    margin: 2.5rem 0;
+}
+
+.culture-item {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #e74c3c;
+    transition: transform 0.3s;
+}
+
+.culture-item:hover {
+    transform: translateY(-5px);
+}
+
+.culture-item h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin: 2.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* CONTACTO.HTML */
+.contact-form {
+    margin: 2.5rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #e74c3c;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.contact-info {
+    margin-top: 3rem;
+    background: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 10px;
+    border-left: 4px solid #2c3e50;
+}
+
+.contact-info h3 {
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+}
+
+/* Responsividade para popups */
+@media (max-width: 768px) {
+    .popup-page {
+        padding: 1.5rem;
+    }
+    
+    .mission-vision,
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .agent-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .agent-photo {
+        margin-bottom: 1.5rem;
+    }
+    
+    .culture-image {
+        height: 250px;
+    }
+}
