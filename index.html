@@ -8,35 +8,31 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<header>
-  <div class="top-bar">
-    <img src="assets/images/logo1.jpg" alt="Logo Guna" class="logo">
-    <h1>Autoridad Indígena de Registro Empresarial</h1>
-  </div>
-</header>
-
-
-
-
+    <header>
+        <div class="top-bar">
+            <img src="assets/images/logo1.jpg" alt="Logo Guna" class="logo">
+            <h1>Autoridad Indígena de Registro Empresarial</h1>
+        </div>
+    </header>
 
     <section class="hero">
         <img src="assets/images/bannerguna.png" alt="Banner Principal Guna">
         <div class="hero-text">
-            <h2>Conectando Tradição e Futuro</h2>
-            <p>Registro legal, reconhecimento e fortalecimento das empresas na Comarca Guna de Magardí.</p>
+            <h2>Conectando Tradición y Futuro</h2>
+            <p>Registro legal, reconocimiento y fortalecimiento de empresas en la Comarca Guna de Magardí.</p>
         </div>
     </section>
 
-    <!-- Menu de Navegação -->
+    <!-- Menu de Navegación actualizado para popups -->
     <nav class="main-menu">
         <ul>
-            <li><a href="about.html">Sobre Nós</a></li>
-            <li><a href="laws.html">Leis</a></li>
-            <li><a href="register.html">Registrar Empresa</a></li>
-            <li><a href="entities.html">Entidades</a></li>
-            <li><a href="agents.html">Agentes</a></li>
-            <li><a href="culture.html">Cultura</a></li>
-            <li><a href="contact.html">Contato</a></li>
+            <li><button onclick="openPopup('about.html')">Sobre Nosotros</button></li>
+            <li><button onclick="openPopup('laws.html')">Leyes</button></li>
+            <li><button onclick="openRegisterPopup()">Registrar Empresa</button></li>
+            <li><button onclick="openPopup('entities.html')">Entidades</button></li>
+            <li><button onclick="openPopup('agents.html')">Agentes</button></li>
+            <li><button onclick="openPopup('culture.html')">Cultura</button></li>
+            <li><button onclick="openPopup('contact.html')">Contacto</button></li>
         </ul>
     </nav>
 
@@ -44,37 +40,39 @@
         <div class="highlight">
             <img src="assets/images/icon_register.svg" alt="Registro de Empresas">
             <h3>Registro</h3>
-            <p>Legalize sua atividade na autoridade Guna. Simples, rápido e autônomo.</p>
+            <p>Legalice su actividad en la autoridad Guna. Simple, rápido y autónomo.</p>
         </div>
         <div class="highlight">
-            <img src="assets/images/balance_scale.svg" alt="Leis e Normas">
-            <h3>Leis</h3>
-            <p>Acesse normas, regulamentos e estrutura legal aplicada à Comarca Guna.</p>
+            <img src="assets/images/balance_scale.svg" alt="Leyes y Normas">
+            <h3>Leyes</h3>
+            <p>Acceda a normas, regulaciones y estructura legal aplicada en la Comarca Guna.</p>
         </div>
         <div class="highlight">
             <img src="assets/images/PersonBadgePlus.svg" alt="Agentes Autorizados">
             <h3>Agentes</h3>
-            <p>Profissionais e consultores reconhecidos para acompanhar seu processo.</p>
+            <p>Profesionales y consultores reconocidos para acompañar su proceso.</p>
         </div>
     </section>
 
     <section class="gallery">
         <h2>Cultura Viva</h2>
         <div class="gallery-grid">
-            <img src="assets/images/galeria1.jpg" alt="Mulher Guna com Mola">
-            <img src="assets/images/galeria2.jpg" alt="Tecelagem tradicional">
-            <img src="assets/images/galeria3.jpg" alt="Crianças Guna sorrindo">
-            <img src="assets/images/galeria4.jpg" alt="Cerimônia com achiote">
-            <img src="assets/images/galeria5.jpg" alt="Barco Cayuco no rio">
-            <img src="assets/images/galeria6.jpg" alt="Vista da Comarca Guna">
+            <img src="assets/images/galeria1.jpg" alt="Mujer Guna con Mola">
+            <img src="assets/images/galeria2.jpg" alt="Tejido tradicional">
+            <img src="assets/images/galeria3.jpg" alt="Niños Guna sonriendo">
+            <img src="assets/images/galeria4.jpg" alt="Ceremonia con achiote">
+            <img src="assets/images/galeria5.jpg" alt="Barco Cayuco en el río">
+            <img src="assets/images/galeria6.jpg" alt="Vista de la Comarca Guna">
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 GUNA – Comarca de Magardí. Todos os direitos reservados.</p>
-            <img src="assets/images/svgemail.svg" alt="Contato">
+            <p>&copy; 2025 GUNA – Comarca de Magardí. Todos los derechos reservados.</p>
+            <img src="assets/images/svgemail.svg" alt="Contacto">
         </div>
     </footer>
+
+    <script src="popup.js"></script>
 </body>
 </html>
