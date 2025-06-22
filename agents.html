@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes Autorizados - GUNA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .popup-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .popup-page h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e74c3c;
+        }
+        
+        .agent-list {
+            margin: 2rem 0;
+        }
+        
+        .agent-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .agent-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f5f5f5;
+            object-fit: cover;
+        }
+        
+        .agent-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .agent-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .specialty {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            margin-top: 0.5rem;
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="popup-header">
+        <img src="assets/images/logo1.jpg" alt="Logo GUNA" class="popup-logo">
+        <h1>Autoridad Indígena de Registro Empresarial</h1>
+    </header>
+
+    <main class="popup-page">
+        <h2>Agentes Autorizados</h2>
+        <p>Selección de profesionales certificados para apoyo legal y administrativo en el proceso de registro empresarial:</p>
+        
+        <div class="agent-list">
+            <div class="agent-card">
+                <div class="agent-photo"></div>
+                <div class="agent-info">
+                    <h3>Ana Candelaria</h3>
+                    <span class="specialty">Registro Empresarial</span>
+                    <p>Experta en trámites de registro y cumplimiento normativo con más de 10 años de experiencia.</p>
+                    <p><strong>Contacto:</strong> ana.agente@guna.org</p>
+                    <a href="#" class="contact-btn">Contactar</a>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-photo"></div>
+                <div class="agent-info">
+                    <h3>Carlos Inatoy</h3>
+                    <span class="specialty">Asesoría Legal</span>
+                    <p>Especialista en derecho indígena y regulaciones comunitarias.</p>
+                    <p><strong>Contacto:</strong> carlos.legal@guna.org</p>
+                    <a href="#" class="contact-btn">Contactar</a>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-photo"></div>
+                <div class="agent-info">
+                    <h3>María Olo</h3>
+                    <span class="specialty">Planificación Empresarial</span>
+                    <p>Asesora en desarrollo de modelos de negocio compatibles con la cultura Guna.</p>
+                    <p><strong>Contacto:</strong> maria.negocios@guna.org</p>
+                    <a href="#" class="contact-btn">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
