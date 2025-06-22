@@ -4,78 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Confirmado - GUNA</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .confirmation-container {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .confirmation-icon {
-            font-size: 4rem;
-            color: #2ecc71;
-            margin-bottom: 1.5rem;
-        }
-        
-        .confirmation-details {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        
-        .next-steps {
-            margin-top: 2rem;
-            text-align: left;
-        }
-        
-        .next-steps ol {
-            padding-left: 1.5rem;
-        }
-        
-        .download-button {
-            display: inline-block;
-            margin-top: 1.5rem;
-            background-color: #e74c3c;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .back-button {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #2c3e50;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            border: 1px solid #2c3e50;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div class="top-bar" style="text-align: center; padding: 1rem;">
+            <img src="assets/images/logo1.jpg" alt="Logo GUNA" class="logo" style="height: 80px; margin-bottom: 1rem;">
+            <h1>Autoridad Indígena de Registro Empresarial</h1>
+        </div>
+    </header>
+
     <div class="confirmation-container">
         <div class="confirmation-icon">✓</div>
         <h1>Registro Confirmado!</h1>
         <p>Sua empresa foi registrada com sucesso na Autoridad Indígena de Registro Empresarial Guna.</p>
-        
+
         <div class="confirmation-details">
             <h3 id="company-name">[Nome da Empresa]</h3>
             <p><strong>Número de Registro:</strong> <span id="registration-number">GNA-2025-999</span></p>
             <p><strong>Data do Registro:</strong> <span id="registration-date">22/07/2025</span></p>
             <p><strong>Código de Verificação:</strong> <span id="verification-code">GNA-5X8Y-2Z9W</span></p>
         </div>
-        
+
         <a href="#" class="download-button">Baixar Certificado (PDF)</a>
-        
+
         <div class="next-steps">
             <h3>Próximos Passos:</h3>
             <ol>
@@ -85,7 +37,7 @@
                 <li>O certificado original chegará por correio em até 15 dias</li>
             </ol>
         </div>
-        
+
         <a href="index.html" class="back-button">Voltar ao Início</a>
     </div>
 
@@ -94,7 +46,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const companyName = urlParams.get('name');
         const regNumber = urlParams.get('reg');
-        
+
         // Generate random verification code
         const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
         let verificationCode = 'GNA-';
@@ -102,16 +54,16 @@
             verificationCode += chars.charAt(Math.floor(Math.random() * chars.length));
             if (i === 3) verificationCode += '-';
         }
-        
+
         // Format today's date
         const today = new Date();
         const formattedDate = today.toLocaleDateString('es-ES');
-        
+
         // Populate data
         if (companyName) {
             document.getElementById('company-name').textContent = companyName;
         }
-        
+
         document.getElementById('registration-number').textContent = regNumber || 'GNA-2025-' + Math.floor(100 + Math.random() * 900);
         document.getElementById('registration-date').textContent = formattedDate;
         document.getElementById('verification-code').textContent = verificationCode;
