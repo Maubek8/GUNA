@@ -242,3 +242,14 @@ footer {
         min-width: 100%;
     }
 }
+/* Alinhar logo à direita */
+.top-bar.spaced {
+    justify-content: space-between;
+}
+
+.logo-right {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 20px;
+}
