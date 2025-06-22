@@ -6,9 +6,136 @@
     <title>Entidades Registradas - GUNA</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* [Mantém todos os estilos anteriores] */
+        /* Estilos para a página de entidades */
+        .search-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
 
-        /* Adiciona estilos para o popup de detalhes */
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #e74c3c;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-box input:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+        }
+
+        .search-box button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0 1.8rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .search-box button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .entities-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .entity-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .entity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .entity-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .entity-id {
+            display: inline-block;
+            background: #f5f5f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.8rem;
+            font-family: monospace;
+        }
+
+        .status-active {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        .view-button {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background-color: #2c3e50;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .view-button:hover {
+            background-color: #1a252f;
+            transform: translateY(-2px);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #777;
+            font-size: 1.1rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Estilos para o popup de detalhes */
         .detail-popup {
             position: fixed;
             top: 0;
@@ -24,54 +151,76 @@
 
         .detail-content {
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             width: 90%;
             max-width: 800px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
             animation: popupFadeIn 0.3s ease-out;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .close-popup {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             background: #e74c3c;
             color: white;
             border: none;
             border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
             cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-popup:hover {
+            background: #c0392b;
+            transform: rotate(90deg);
         }
 
         .entity-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
 
         .detail-section {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .detail-section h3 {
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #e74c3c;
+            font-size: 1.3rem;
+        }
+
+        .detail-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .detail-section strong {
+            color: #2c3e50;
         }
 
         .certificate {
             border: 2px dashed #e74c3c;
             padding: 2rem;
             text-align: center;
-            margin: 2rem 0;
+            margin: 3rem 0 2rem;
             position: relative;
+            border-radius: 12px;
+            background: #fff9f9;
         }
 
         .certificate-id {
@@ -82,31 +231,81 @@
             padding: 0 10px;
             color: #2c3e50;
             font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .certificate h3 {
+            color: #e74c3c;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
         }
 
         .qr-code {
             width: 150px;
             height: 150px;
-            margin: 1rem auto;
+            margin: 1.5rem auto;
             background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
             color: #777;
+            border-radius: 8px;
+            border: 1px solid #eee;
         }
 
         @keyframes popupFadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .search-box button {
+                padding: 0.8rem;
+            }
+            
+            .detail-content {
+                padding: 1.8rem;
+            }
+            
+            .entity-details {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="search-container">
+    <header>
+        <div class="top-bar spaced">
+            <div>
+                <img src="assets/images/logo1.jpg" alt="Logo Guna" class="logo">
+                <h1>Autoridad Indígena de Registro Empresarial</h1>
+            </div>
+        </div>
+    </header>
 
+    <section class="hero">
+        <img src="assets/images/bannerguna.png" alt="Banner Principal Guna">
+        <div class="hero-text">
+            <h2>Entidades Registradas</h2>
+            <p>Consulta el directorio oficial de empresas registradas en la Comarca Guna de Magardí</p>
+        </div>
+    </section>
+
+    <div class="search-container">
         <div class="search-box">
-            <input type="text" id="entity-search" placeholder="Buscar entidades por nombre o ID..." onkeyup="searchEntities()">
+            <input type="text" id="entity-search" placeholder="Buscar entidades por nombre, ID o comunidad..." onkeyup="searchEntities()">
             <button onclick="searchEntities()">Buscar</button>
         </div>
     </div>
@@ -146,7 +345,7 @@
             </div>
             
             <div class="certificate">
-                <span class="certificate-id">CERTIFICADO</span>
+                <span class="certificate-id">CERTIFICADO OFICIAL</span>
                 <h3>Autoridad Indígena de Registro Empresarial</h3>
                 <p>Certificamos que <strong id="detail-cert-name">[Nombre de la Empresa]</strong> está debidamente registrada en la Comarca Guna de Magardí conforme a las leyes y tradiciones de nuestro pueblo.</p>
                 <div class="qr-code">
@@ -208,6 +407,34 @@
                 lastUpdate: "01/07/2025",
                 renewal: "01/07/2026",
                 validUntil: "01/07/2026"
+            },
+            {
+                id: "GNA-2025-004",
+                name: "Textiles Ancestrales",
+                type: "Producción Textil",
+                status: "Activa",
+                community: "Ailigandí",
+                regDate: "05/07/2025",
+                legalRep: "Luisa Smith",
+                legalId: "GNA-ID-2025-004",
+                contact: "textiles@gunatextil.com",
+                lastUpdate: "12/07/2025",
+                renewal: "05/07/2026",
+                validUntil: "05/07/2026"
+            },
+            {
+                id: "GNA-2025-005",
+                name: "Agricultura Orgánica",
+                type: "Producción Agrícola",
+                status: "Activa",
+                community: "Narganá",
+                regDate: "10/07/2025",
+                legalRep: "José Fernández",
+                legalId: "GNA-ID-2025-005",
+                contact: "agricultura@gunorganico.com",
+                lastUpdate: "15/07/2025",
+                renewal: "10/07/2026",
+                validUntil: "10/07/2026"
             }
         ];
 
