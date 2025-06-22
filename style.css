@@ -745,3 +745,93 @@ footer {
         height: 250px;
     }
 }
+/* Estilos modernos para popup de registro */
+.modern-popup-content {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+.popup-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.popup-header h2 {
+    color: #2c3e50;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.8rem;
+}
+
+.modern-form-group {
+    margin-bottom: 1.8rem;
+}
+
+.modern-form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.modern-form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.modern-form-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.modern-submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.modern-submit-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+.modern-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modern-close-btn:hover {
+    background: #c0392b;
+    transform: rotate(90deg);
+}
