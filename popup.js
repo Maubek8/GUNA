@@ -48,34 +48,35 @@ window.onclick = function(event) {
 
 // Função especial para o registro
 function openRegisterPopup() {
-    // Cria o popup de registro
     let popupContainer = document.getElementById('register-popup');
     if(!popupContainer) {
         popupContainer = document.createElement('div');
         popupContainer.id = 'register-popup';
         popupContainer.className = 'popup-active';
         popupContainer.innerHTML = `
-            <div class="popup-content">
-                <button onclick="closeRegisterPopup()">✖</button>
-                <h2>Registrar Empresa</h2>
+            <div class="modern-popup-content">
+                <div class="popup-header">
+                    <img src="assets/images/logo1.jpg" alt="Logo GUNA" class="popup-logo">
+                    <h2>Registro de Empresa</h2>
+                </div>
                 <form id="register-form" onsubmit="submitRegisterForm(event)">
-                    <div class="form-group">
+                    <div class="modern-form-group">
                         <label for="company-name">Nombre de la Empresa:</label>
                         <input type="text" id="company-name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="modern-form-group">
                         <label for="registration-number">Número de Registro:</label>
                         <input type="text" id="registration-number" required>
                     </div>
-                    <button type="submit">Enviar</button>
+                    <button type="submit" class="modern-submit-btn">Registrar Empresa</button>
                 </form>
+                <button onclick="closeRegisterPopup()" class="modern-close-btn">✖</button>
             </div>
         `;
         document.body.appendChild(popupContainer);
     } else {
         popupContainer.className = 'popup-active';
     }
-    
     document.body.style.overflow = 'hidden';
 }
 
