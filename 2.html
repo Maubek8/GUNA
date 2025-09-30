@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lei de Negócios Digitais e Plataformas - Kuna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #2a4a7c);
+            color: white;
+            padding: 30px 0;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .back-button {
+            background-color: #ff6b35;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .back-button:active {
+            transform: translateY(0);
+        }
+        
+        .law-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin: 25px 0 15px;
+        }
+        
+        h3 {
+            color: #2a4a7c;
+            margin: 20px 0 10px;
+        }
+        
+        .article {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #ff6b35;
+        }
+        
+        .article-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .annex {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2a4a7c;
+        }
+        
+        .annex-title {
+            font-weight: 600;
+            color: #2a4a7c;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .law-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <h1>Lei Kuna N.º 2/2025</h1>
+                    <p class="subtitle">"Ley de Negocios Digitales y Plataformas"</p>
+                </div>
+                <button class="back-button" onclick="goBack()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                    Voltar para GUNA
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="law-content">
+            <h2>ANTEPROYECTO DE LEY KUNA N.º 2/2025</h2>
+            <p>"Ley de Negocios Digitales y Plataformas"</p>
+            <p><strong>("Ley de las Formigas") – Kuna International Services (KIS)</strong></p>
+
+            <h2>TÍTULO I — DISPOSICIONES GENERALES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 1. Objeto.</div>
+                <p>Regular la constitución, funcionamiento y supervisión de negocios digitales, plataformas tecnológicas y sociedades en línea, bajo un esquema ultraligero y de alta accesibilidad, destinado a fomentar la innovación y la economía digital de la Nación Kuna.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 2. Autoridad Competente.</div>
+                <p>La Kuna International Services (KIS) será la entidad reguladora, encargada de otorgar registros, administrar licencias, supervisar el cumplimiento y emitir normativa técnica.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 3. Principios rectores.</div>
+                <ul>
+                    <li>a) Simplificación: trámites en 1–2 páginas, todo en línea.</li>
+                    <li>b) Neutralidad tecnológica.</li>
+                    <li>c) Interoperabilidad internacional.</li>
+                    <li>d) Seguridad jurídica mínima y clara.</li>
+                    <li>e) Fomento de la economía digital y comunitaria.</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO II — FORMAS DE NEGOCIOS DIGITALES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 4. Categorías de entidades digitales.</div>
+                <ol>
+                    <li><strong>Empresa Kuna Simplificada (EKS):</strong> una persona natural, responsabilidad limitada al capital aportado.</li>
+                    <li><strong>Cooperativa Digital Kuna (CDK):</strong> sociedad de múltiples miembros, con reglas básicas de participación igualitaria.</li>
+                    <li><strong>Sociedad de Plataforma Digital (SPD):</strong> diseñada para startups, marketplaces y servicios en línea con múltiples usuarios.</li>
+                    <li><strong>Organización Autónoma Kuna (OAK):</strong> estructuras descentralizadas (DAOs) reconocidas legalmente si cumplen requisitos mínimos de transparencia.</li>
+                </ol>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 5. Constitución en línea.</div>
+                <p>Todos los registros se realizan a través del portal digital de la KIS.</p>
+                <p><strong>Requisitos mínimos:</strong></p>
+                <ul>
+                    <li>Nombre de la entidad.</li>
+                    <li>Identificación del/los fundadores (N1 o N2 según Ley 1).</li>
+                    <li>Objeto social declarado.</li>
+                    <li>Dirección electrónica oficial.</li>
+                </ul>
+                <p>Tiempo máximo de inscripción: 24 horas.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 6. Capital mínimo.</div>
+                <ul>
+                    <li>EKS: USD 10 (tokenizable).</li>
+                    <li>CDK y SPD: USD 100.</li>
+                    <li>OAK: sin capital mínimo, pero requiere fondo de reserva digital equivalente a USD 500 en cripto o fiat.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 7. Contratos electrónicos.</div>
+                <p>Todos los contratos celebrados en el marco de las entidades Kuna tienen plena validez legal, siempre que:</p>
+                <ul>
+                    <li>a) se realicen en formato electrónico con firma digital,</li>
+                    <li>b) queden almacenados en registro verificable (blockchain, timestamp o repositorio KIS).</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO III — IMPUESTOS Y TASAS</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 8. Tasa anual única.</div>
+                <p>Cada entidad paga una tasa fija anual de mantenimiento:</p>
+                <ul>
+                    <li>EKS: USD 50.</li>
+                    <li>CDK y SPD: USD 150.</li>
+                    <li>OAK: USD 200.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 9. Régimen fiscal simplificado.</div>
+                <ul>
+                    <li>Impuesto único del 5% sobre ingresos netos anuales declarados.</li>
+                    <li>Opción de régimen alternativo de cuota fija anual para ingresos < USD 20.000.</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO IV — DERECHOS Y OBLIGACIONES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 10. Derechos de las entidades.</div>
+                <ul>
+                    <li>a) Acceso a licencias y registros digitales internacionales.</li>
+                    <li>b) Reconocimiento de su personalidad jurídica en contratos y arbitrajes internacionales.</li>
+                    <li>c) Derecho a operar en plataformas financieras y tecnológicas globales.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 11. Obligaciones mínimas.</div>
+                <ul>
+                    <li>a) Mantener actualizada su información básica ante la KIS.</li>
+                    <li>b) Declarar ingresos anualmente.</li>
+                    <li>c) Cumplir las normas internacionales anti-lavado y compliance según Ley 1.</li>
+                    <li>d) Garantizar derechos básicos de usuarios: información, acceso y resolución de conflictos.</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO V — PLATAFORMAS DIGITALES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 12. Definición.</div>
+                <p>Se consideran plataformas digitales todas aquellas que faciliten la interacción entre múltiples usuarios en línea para intercambio de bienes, servicios, información o activos.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 13. Licencias de operación.</div>
+                <ol>
+                    <li>Plataforma Básica (PB): hasta 10.000 usuarios.</li>
+                    <li>Plataforma Intermedia (PI): hasta 100.000 usuarios.</li>
+                    <li>Plataforma Global (PG): sin límite de usuarios.</li>
+                </ol>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 14. Requisitos mínimos.</div>
+                <ul>
+                    <li>Política de privacidad publicada.</li>
+                    <li>Términos y condiciones básicos.</li>
+                    <li>Procedimiento de reclamos.</li>
+                    <li>Reporte anual de actividad a KIS.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 15. Protección al usuario.</div>
+                <p>Las plataformas deben:</p>
+                <ul>
+                    <li>Informar tarifas y condiciones.</li>
+                    <li>Garantizar mecanismos de resolución de conflictos (internos o mediación KIS).</li>
+                    <li>Prevenir abusos de mercado (monopolio, manipulación digital).</li>
+                </ul>
+            </div>
+
+            <!-- Continuação do conteúdo (os outros títulos) -->
+            <h2>TÍTULO VI — ORGANIZACIONES AUTÓNOMAS KUNA (OAK / DAOs)</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 16. Reconocimiento legal.</div>
+                <p>Las OAK constituyen una persona jurídica válida, siempre que:</p>
+                <ul>
+                    <li>Sus reglas estén codificadas en un smart contract registrado en KIS.</li>
+                    <li>Exista un responsable legal de contacto para cooperación internacional.</li>
+                    <li>Se cumpla con normas mínimas de PLD/FT.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 17. Gobernanza.</div>
+                <p>Cada miembro tiene derecho a voto según reglas del contrato. Los cambios de estatutos se realizan en cadena y se notifican automáticamente a KIS.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 18. Responsabilidad.</div>
+                <p>Los miembros responden hasta el monto aportado, salvo fraude o uso ilícito.</p>
+            </div>
+
+            <h2>TÍTULO VII — CIBERSEGURIDAD Y DATOS</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 19. Medidas mínimas.</div>
+                <ul>
+                    <li>Uso de cifrado TLS 1.3.</li>
+                    <li>Autenticación de dos factores para administradores.</li>
+                    <li>Copias de seguridad cifradas.</li>
+                    <li>Política de retención de datos: máx. 3 años.</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 20. Incidentes digitales.</div>
+                <p>Las entidades deben notificar a la KIS en 72 horas cualquier incidente grave (pérdida de datos, hackeo, caída prolongada).</p>
+            </div>
+
+            <h2>TÍTULO VIII — SUPERVISIÓN Y SANCIONES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 21. Supervisión.</div>
+                <p>KIS podrá realizar auditorías digitales mediante:</p>
+                <ul>
+                    <li>Revisión remota de contratos electrónicos.</li>
+                    <li>Solicitud de información financiera básica.</li>
+                    <li>Simulaciones de usuario (mystery shopper digital).</li>
+                </ul>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 22. Sanciones.</div>
+                <ul>
+                    <li>a) Amonestación escrita.</li>
+                    <li>b) Multa hasta 2% de ingresos anuales o USD 100.000.</li>
+                    <li>c) Suspensión temporal (máx. 6 meses).</li>
+                    <li>d) Revocación de registro.</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO IX — ARBITRAJE Y RESOLUCIÓN DE CONFLICTOS</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 23. Arbitraje digital Kuna.</div>
+                <p>Todo contrato firmado bajo jurisdicción Kuna puede optar por arbitraje digital ante la KIS.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 24. Procedimiento.</div>
+                <ul>
+                    <li>Arbitraje 100% en línea.</li>
+                    <li>Plazo máximo: 90 días.</li>
+                    <li>Costos reducidos (USD 50–500 según monto en disputa).</li>
+                </ul>
+            </div>
+
+            <h2>TÍTULO X — DISPOSICIONES FINALES</h2>
+            
+            <div class="article">
+                <div class="article-title">Artículo 25. Reconocimiento internacional.</div>
+                <p>Las entidades Kuna podrán solicitar reconocimiento en organismos internacionales mediante certificación KIS.</p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">Artículo 26. Transitorias.</div>
+                <ul>
+                    <li>Entidades ya constituidas tendrán 90 días para adecuarse.</li>
+                    <li>KIS emitirá en 60 días:
+                        <ul>
+                            <li>Plantilla única de constitución digital (1 página).</li>
+                            <li>Modelos de contratos electrónicos.</li>
+                            <li>Guía técnica de privacidad y ciberseguridad mínima.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>ANEXOS</h2>
+            
+            <div class="annex">
+                <div class="annex-title">Anexo I — Plantilla de Constitución Digital (EKS)</div>
+                <ul>
+                    <li>Nombre.</li>
+                    <li>Fundador (ID).</li>
+                    <li>Objeto social.</li>
+                    <li>Dirección electrónica.</li>
+                    <li>Firma digital.</li>
+                </ul>
+            </div>
+            
+            <div class="annex">
+                <div class="annex-title">Anexo II — Contrato Tipo SPD (Marketplace)</div>
+                <ul>
+                    <li>Definición de usuarios.</li>
+                    <li>Tarifas.</li>
+                    <li>Obligaciones básicas.</li>
+                    <li>Reclamos y arbitraje KIS.</li>
+                </ul>
+            </div>
+            
+            <div class="annex">
+                <div class="annex-title">Anexo III — Checklist de Cumplimiento (PLD/FT + Ciberseguridad)</div>
+                <ul>
+                    <li>Registro actualizado.</li>
+                    <li>Declaración anual.</li>
+                    <li>Política de privacidad publicada.</li>
+                    <li>Mecanismo de reclamos activo.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Kuna International Services (KIS) - Ley de Negocios Digitales y Plataformas</p>
+        </div>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.location.href = 'https://maubek8.github.io/GUNA/GUNA.html';
+        }
+    </script>
+</body>
+</html>
