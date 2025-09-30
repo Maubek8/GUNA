@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglamentación Técnica KIS/2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #667eea;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        p, li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .highlight p {
+            margin-bottom: 8px;
+        }
+
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 0.95em;
+            line-height: 1.8;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Botão Voltar ao Topo */
+        .back-to-guna {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05em;
+        }
+
+        .back-to-guna:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.7);
+        }
+
+        .back-to-guna::before {
+            content: "←";
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-guna:hover::before {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-guna {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        strong {
+            color: #764ba2;
+            font-weight: 600;
+        }
+
+        .final-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .final-box p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .final-box strong {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão Voltar para GUNA -->
+    <a href="https://maubek8.github.io/GUNA/GUNA.html" class="back-to-guna">Voltar à GUNA</a>
+
+    <div class="container">
+        <h1>Reglamentación Técnica – KIS/2025</h1>
+        <p class="subtitle">(Aplicable a la Ley de Activos Virtuales y VASPs)</p>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>1. Formatos Estándar de Reportes</h2>
+            
+            <h3>1.1 Reporte de Operación Sospechosa (ROS-KIS-01)</h3>
+            <ul>
+                <li>Identificador único del reporte</li>
+                <li>Datos básicos del reportante: VASP, clase, responsable de cumplimiento</li>
+                <li>Datos del cliente (nivel de KYC alcanzado)</li>
+                <li>Tipo de operación: intercambio, custodia, transferencia</li>
+                <li>Monto y fecha</li>
+                <li>Descripción de la sospecha (máx. 300 palabras)</li>
+                <li>Acciones tomadas: congelamiento, advertencia, monitoreo reforzado</li>
+                <li>Firma digital del oficial de cumplimiento</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Formato de envío:</strong> JSON + firma digital (OpenPGP o X.509)</p>
+                <p><strong>Plazo:</strong> 72h desde detección</p>
+                <p><strong>Canal:</strong> Portal seguro KIS o API REST</p>
+            </div>
+
+            <h3>1.2 Reporte de Operaciones en Efectivo/Fiat (ROE-KIS-02)</h3>
+            <ul>
+                <li>ID del reporte</li>
+                <li>Cliente (N1/N2)</li>
+                <li>Monto en fiat y moneda</li>
+                <li>Fecha y medio (transferencia bancaria, cash-in/out)</li>
+                <li>Destino u origen declarado</li>
+                <li>Validación documental (si aplica)</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Umbral:</strong> ≥ USD 10.000 en 24h</p>
+                <p><strong>Plazo:</strong> 7 días</p>
+                <p><strong>Formato:</strong> CSV firmado o API</p>
+            </div>
+
+            <h3>1.3 Reporte de Incidente Cibernético (INC-KIS-03)</h3>
+            <ul>
+                <li>Fecha y hora de detección</li>
+                <li>Tipo de incidente: hackeo, fuga de datos, caída prolongada, manipulación interna</li>
+                <li>Impacto: fondos, datos, disponibilidad</li>
+                <li>Medidas inmediatas tomadas</li>
+                <li>Estado actual</li>
+                <li>Plan de recuperación</li>
+            </ul>
+
+            <div class="highlight">
+                <p><strong>Plazo:</strong> 72h desde detección</p>
+                <p><strong>Canal:</strong> API cifrada + notificación por correo seguro</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>2. Especificación Travel Rule Light (TRL-KIS-2025)</h2>
+            
+            <h3>2.1 Datos mínimos obligatorios</h3>
+            <p><strong>Ordenante:</strong></p>
+            <ul>
+                <li>Nombre completo</li>
+                <li>Identificador único (doc, wallet verificada, ID KIS)</li>
+                <li>País de residencia</li>
+            </ul>
+
+            <p><strong>Beneficiario:</strong></p>
+            <ul>
+                <li>Nombre completo</li>
+                <li>Identificador único</li>
+                <li>País de residencia</li>
+            </ul>
+
+            <h3>2.2 Umbral</h3>
+            <p>Aplicable a transferencias <strong>≥ USD 1.000</strong> entre VASPs</p>
+
+            <h3>2.3 Protocolos aceptados</h3>
+            <ul>
+                <li>Mensajería cifrada fuera de cadena (ej. Signal, Matrix, correo PGP)</li>
+                <li>API REST segura con TLS 1.3</li>
+                <li>Batch file diario cifrado y firmado (para VASP Clase A)</li>
+            </ul>
+
+            <h3>2.4 Respuesta ante fallos</h3>
+            <p>Si no es posible obtener datos, el VASP debe:</p>
+            <ul>
+                <li><strong>a)</strong> Marcar la operación de riesgo alto</li>
+                <li><strong>b)</strong> Ejecutar monitoreo reforzado</li>
+                <li><strong>c)</strong> Reportar a KIS si hay sospecha</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>3. APIs y Endpoints Mínimos</h2>
+            <div class="code">/api/report/ros → POST ROS-KIS-01
+/api/report/roe → POST ROE-KIS-02
+/api/report/inc → POST INC-KIS-03
+/api/travelrule/send → intercambio de datos ordenante/beneficiario
+/api/travelrule/ack → confirmación de recepción</div>
+
+            <div class="highlight">
+                <p><strong>Formato preferido:</strong> JSON</p>
+                <p><strong>Cifrado:</strong> TLS 1.3 + JWT firmado</p>
+                <p><strong>Autenticación:</strong> API Key + firma digital KIS</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>4. Plantillas Básicas (Modelo Light)</h2>
+            <ul>
+                <li><strong>Manual PLD/FT:</strong> 2 páginas → umbrales, ROS, TRL</li>
+                <li><strong>Plan de Ciberseguridad:</strong> 2 páginas → MFA, gestión de llaves, backups</li>
+                <li><strong>Disclosure al Usuario:</strong> 1 página → tarifas, riesgos, plazos de retiro</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>5. Matriz de Cumplimiento Esencial (MCE)</h2>
+            <ul>
+                <li><strong>Clase A:</strong> cumplimiento simplificado → checklists y ROS</li>
+                <li><strong>Clase B:</strong> cumplimiento intermedio → ROS, ROE, TRL básico, auditoría anual</li>
+                <li><strong>Clase C:</strong> cumplimiento pleno → ROS, ROE, TRL completo, pruebas de reservas trimestrales</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h2>6. Sandbox y Pruebas</h2>
+            <p><strong>Sandbox KIS acepta:</strong></p>
+            <ul>
+                <li>Simulación de ROS/ROE/INC con datos ficticios</li>
+                <li>Pruebas de Travel Rule entre VASPs con wallets demo</li>
+            </ul>
+            <p><strong>Duración:</strong> 12 meses, prorrogable</p>
+        </div>
+
+        <div class="final-box">
+            <p>📌 <strong>Kit operativo completo:</strong></p>
+            <p>1. Ley codificada | 2. Reglamentación técnica | 3. APIs y plantillas listas para usar</p>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de parallax suave no scroll
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            document.body.style.backgroundPositionY = scrolled * 0.3 + 'px';
+        });
+
+        // Animação suave ao carregar
+        window.addEventListener('load', function() {
+            document.querySelector('.container').style.opacity = '0';
+            document.querySelector('.container').style.transform = 'translateY(30px)';
+            
+            setTimeout(function() {
+                document.querySelector('.container').style.transition = 'all 0.8s ease';
+                document.querySelector('.container').style.opacity = '1';
+                document.querySelector('.container').style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
